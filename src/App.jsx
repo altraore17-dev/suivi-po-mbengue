@@ -10,6 +10,8 @@ import Manoeuvres    from './pages/Manoeuvres';
 import Phytosanitaire from './pages/Phytosanitaire';
 import Journal       from './pages/Journal';
 import Plus          from './pages/Plus';
+import { lazy, Suspense } from 'react';
+const ImportExcel = lazy(() => import('./pages/ImportExcel'));
 
 export default function App() {
   return (
@@ -26,6 +28,7 @@ export default function App() {
         <Route path="/phytosanitaire"     element={<Phytosanitaire />} />
         <Route path="/journal"            element={<Journal />} />
         <Route path="/plus"               element={<Plus />} />
+        <Route path="/import"             element={<Suspense fallback={<div className="flex items-center justify-center h-full"><div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"/></div>}><ImportExcel /></Suspense>} />
       </Routes>
     </BrowserRouter>
   );

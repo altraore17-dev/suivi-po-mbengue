@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 
 const MENUS = [
+  { to: '/import',         icon: '📥', label: 'Importer Excel',       desc: 'Charger données depuis .xlsx', highlight: true },
   { to: '/pluviometrie',   icon: '🌧️', label: 'Pluviométrie',        desc: 'Relevés journaliers de pluie' },
   { to: '/recoltes',       icon: '🌾', label: 'Récoltes',             desc: 'Historique et pesées' },
   { to: '/manoeuvres',     icon: '👷', label: 'Suivi Manœuvres',      desc: 'Main-d\'œuvre & paiements' },
@@ -31,14 +32,14 @@ export default function Plus() {
   return (
     <Layout title="Plus">
       <div className="px-4 mt-3 space-y-2">
-        {MENUS.map(({ to, icon, label, desc }) => (
-          <Link key={to} to={to} className="flex items-center gap-4 bg-white rounded-2xl shadow-sm p-4 active:scale-95 transition-transform">
+        {MENUS.map(({ to, icon, label, desc, highlight }) => (
+          <Link key={to} to={to} className={`flex items-center gap-4 rounded-2xl shadow-sm p-4 active:scale-95 transition-transform ${highlight ? 'bg-primary text-white' : 'bg-white'}`}>
             <span className="text-3xl">{icon}</span>
             <div className="flex-1">
-              <p className="font-semibold text-sm text-gray-800">{label}</p>
-              <p className="text-xs text-gray-400">{desc}</p>
+              <p className={`font-semibold text-sm ${highlight ? 'text-white' : 'text-gray-800'}`}>{label}</p>
+              <p className={`text-xs ${highlight ? 'text-green-200' : 'text-gray-400'}`}>{desc}</p>
             </div>
-            <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className={`w-4 h-4 ${highlight ? 'text-green-200' : 'text-gray-300'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
