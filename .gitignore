@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+data_extracted.json
+extract_data.py
+generate_icons.py

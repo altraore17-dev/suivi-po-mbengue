@@ -1,0 +1,17 @@
+{
+  "name": "Suivi P.O M'Bengue 2026-27",
+  "short_name": "P.O MBG",
+  "description": "Gestion agricole — Poste d'Observation de M'Bengue",
+  "start_url": "/suivi-po-mbengue/",
+  "scope": "/suivi-po-mbengue/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f5f5",
+  "theme_color": "#1B5E20",
+  "icons": [
+    { "src": "/suivi-po-mbengue/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/suivi-po-mbengue/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["productivity", "agriculture"],
+  "lang": "fr"
+}
