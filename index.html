@@ -12,6 +12,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="P.O MBG" />
     <title>Suivi P.O M'Bengue</title>
+    <script>
+      // Restore path encoded by 404.html redirect
+      (function(l) {
+        if (l.search[1] === 'p' && l.search[2] === '=') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          var path = decoded[0].slice(2); // remove 'p='
+          var query = decoded[1] ? '?' + decoded[1].slice(2) : '';
+          window.history.replaceState(null, null,
+            l.pathname + (path ? '/' + path : '') + query + l.hash
+          );
+        }
+      }(window.location));
+    </script>
   </head>
   <body>
     <div id="root"></div>
